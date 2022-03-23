@@ -2,24 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake({name}) {
-  return(
-    <h1>{name}</h1>
-  )
-}
+const lakeList = ["Big Lake", "Small Lake", "Deutsch Lake"];
 
-function App() {
+function App({lakes}) {
   return(
-    <div>
-      <Lake name="Königssee" />
-      <Lake name="Alpsee" />
-      <Lake name="Tegernsee" />
-    </div>
+    // For each lake in the array, put it inside that JSX code
+    <ul>
+      {lakes.map(lake => <li>{lake}</li>)}
+    </ul>
   )
 }
 
 ReactDOM.render(
-  <App />,
+  <App lakes={lakeList} />,
   document.getElementById('root')
 );
 
