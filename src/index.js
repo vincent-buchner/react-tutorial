@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Hello(props) {
-  console.log(Object.keys(props))
+function Hello({library, message, number}) {
   return(
     <div>
-      <h1>Hello {props.library}!</h1>
-      <p>{props.message}</p>
-      <p>This is the number of props: {Object.keys(props).length}. Cool right?</p>
+      <h1>Hello {library}!</h1>
+      <p>{message}</p>
+      <p>This is a number: {number}. Cool right?</p>
     </div>
   );
 }
