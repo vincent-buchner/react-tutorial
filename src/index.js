@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Hello() {
+function Hello(props) {
+  console.log(Object.keys(props))
   return(
     <div>
-      <h1>Hello React!</h1>
-      <p>This is a sample from the the Linkedin Learning course on React! How am I doing? </p>
+      <h1>Hello {props.library}!</h1>
+      <p>{props.message}</p>
+      <p>This is the number of props: {Object.keys(props).length}. Cool right?</p>
     </div>
   );
 }
 
 ReactDOM.render(
-  <Hello />,
+  <Hello library="React" message="Hello world!" number={7} />,
   document.getElementById('root')
 );
 
